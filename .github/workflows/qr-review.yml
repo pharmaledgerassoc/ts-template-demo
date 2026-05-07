@@ -1,0 +1,23 @@
+name: Run from QR Review
+
+on:
+  repository_dispatch:
+    types:
+      - ptp_plabug_qrreview
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print jira payload
+        run: |
+          echo "To na ação ptp_plabug_qrreview"
+          echo "Ticket: ${{ github.event.client_payload.ticket }}"
+          echo "Summary: ${{ github.event.client_payload.summary }}"
+          echo "Status: ${{ github.event.client_payload.status }}"
+          echo "URL: ${{ github.event.client_payload.url }}"
+          echo "Type: ${{ github.event.client_payload.type }}"
+          echo "Priority: ${{ github.event.client_payload.priority }}"
+          echo "Assignee: ${{ github.event.client_payload.assignee }}"
+          echo "Reporter: ${{ github.event.client_payload.reporter }}"
+          echo "Project: ${{ github.event.client_payload.project }}"
