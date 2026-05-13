@@ -3,7 +3,7 @@ name: Run bug in progress
 on:
   repository_dispatch:
     types:
-      - decaf_bug_in_progress
+      - ptp_bug_in_progress
 
 jobs:
   create-branch:
